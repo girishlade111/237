@@ -80,8 +80,8 @@ None required for local development.
 
 ## Deployment Notes
 
-- The original v0 project deploys to Vercel (`next build && next start`).
-- Static export is not enabled by default (dynamic server features aren't used by the game itself, but the App Router config targets a Node server).
+- Static export is enabled (`output: 'export'` in `next.config.mjs`, images unoptimized) — the game uses no server features, so `next build` emits a fully static `out/` directory that can be hosted on any static host (GitHub Pages, Cloudflare Pages, Netlify).
+- The original v0 project deploys to Vercel (`next build && next start`); for a server deployment, change `output` back to the default and use `next start`.
 
 ## License
 
